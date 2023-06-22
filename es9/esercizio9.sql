@@ -31,6 +31,8 @@ CREATE TABLE CUSTOMER (
 --Delete all customers with a truncate statement.
 
   TRUNCATE TABLE CUSTOMER;
+
+
 -- Look at the tables below and write which column(s) you think would make a good primary key.
 
 CREATE TABLE Customers (
@@ -40,25 +42,25 @@ CREATE TABLE Customers (
  email VARCHAR(255) NOT NULL,        --  potrebbere essere una buona primary-key se non fosse troppo piu' pesante e meno
  PRIMARY KEY (customer_id)
 );
-Question
+
 
 CREATE TABLE Products (
- product_name VARCHAR(255) NOT NULL,
+ product_name VARCHAR(255) NOT NULL,  -- Non essendoci un ID da impostare come primary-key, l'opzione migliore credo sia impostare il 'name'
  product_description VARCHAR(255) NOT NULL,
  product_price DECIMAL(10, 2) NOT NULL,
  product_quantity INT NOT NULL
 );
-Question
+
 
 CREATE TABLE Orders (
- order_id INT NOT NULL AUTO_INCREMENT,
+ order_id INT NOT NULL AUTO_INCREMENT,   --un ID è la migliore primary-key, come già specificato, quindi order_id è un'ottima primary-key
  customer_id INT NOT NULL,
  expected_arrival_time DATE
 );
-9 - Question
+
 
 CREATE TABLE Product_Orders (
- order_id INT NOT NULL AUTO_INCREMENT,
+ order_id INT NOT NULL AUTO_INCREMENT,  -- order_id di nuovo come primary-key ottimale
  product_name VARCHAR(255) NOT NULL,
  total_revenue DOUBLE
 );
